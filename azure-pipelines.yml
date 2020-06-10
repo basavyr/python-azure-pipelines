@@ -24,6 +24,9 @@ steps:
 - script: pip3 install -r src/packages.json
   displayName: 'install the necessary python packages - py3'
 
+- script: cd src && chmod 775 clean.sh && ./clean.sh
+  displayName: 'clean the log folder before building'
+
 - script: cd src && python2 average.py
   displayName: 'runs the script - py2'
 
