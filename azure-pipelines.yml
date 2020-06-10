@@ -17,7 +17,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- script: sudo apt-get install update
+- script: sudo apt update
   displayName: 'Updates the image'
   
 - script: sudo apt-get install -y python
