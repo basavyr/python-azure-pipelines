@@ -26,8 +26,14 @@ steps:
 - script: sudo apt-get install -y python3
   displayName: 'Installs python3'
 
-- script: ls
-  displayName: 'where are we'
+- script: pip install -r src/packages.json
+  displayName: 'install the necessary python packages - py2'
+
+- script: pip3 install -r src/packages.json
+  displayName: 'install the necessary python packages - py3'
 
 - script: python2 src/average.py
-  displayName: 'runs the script'
+  displayName: 'runs the script - py2'
+
+- script: python3 src/average.py
+  displayName: 'runs the script - py3'
