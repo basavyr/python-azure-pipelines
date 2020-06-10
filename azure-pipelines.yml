@@ -23,5 +23,11 @@ steps:
 - script: sudo apt-get install -y python
   displayName: 'Installs python'
 
+- script: sudo apt-get install -y python3
+  displayName: 'Installs python3'
+
 - script: ls
   displayName: 'where are we'
+
+- script: python2 src/average.py
+  displayName: 'runs the script'
