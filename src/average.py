@@ -46,7 +46,7 @@ def generate_rand_container(size):
 
 newline = '\n'
 
-for log_file in range(1):
+for log_file in range(100):
     log_file_name = str(os.system())+'-'+py_build_info + '-' + \
         str(int(time.time()))+'.log'
     path = '../logs/'+log_file_name
