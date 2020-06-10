@@ -35,4 +35,8 @@ steps:
     ls 
     cd ..
     tar -zcvf logs.tar.gz logs
+    ls
+    cp logs.tar.gz /tmp/
+    cd /tmp/
+    ls
   displayName: check the logs and make archive
