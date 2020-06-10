@@ -9,14 +9,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
 - script: sudo apt update
   displayName: 'Updates the image'
   
@@ -37,3 +29,10 @@ steps:
 
 - script: python3 src/average.py
   displayName: 'runs the script - py3'
+
+- script: |
+    cd logs
+    ls 
+    cd ..
+    tar -zcvf logs.tar.gz logs
+  displayName: check the logs and make archive
