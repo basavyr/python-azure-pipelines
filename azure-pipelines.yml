@@ -40,3 +40,6 @@ steps:
     cd /tmp/
     ls
   displayName: check the logs and make archive
+
+- publish: /tmp/logs.tar.gz
+  artifact: logs
