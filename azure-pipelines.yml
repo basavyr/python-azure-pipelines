@@ -24,10 +24,10 @@ steps:
 - script: pip3 install -r src/packages.json
   displayName: 'install the necessary python packages - py3'
 
-- script: python2 src/average.py
+- script: cd src && python2 average.py
   displayName: 'runs the script - py2'
 
-- script: python3 src/average.py
+- script: cd src && python3 average.py
   displayName: 'runs the script - py3'
 
 - script: |
