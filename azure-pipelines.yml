@@ -1,4 +1,6 @@
 jobs:
+ strategy:
+    maxParallel: 2
 - job: Job1
   pool:
     vmImage: "ubuntu-latest"
@@ -43,6 +45,8 @@ jobs:
 
 - job: Job2
   pool:
-    vmImage: "ubuntu-latest"
+    vmImage: "macOS-latest"
   steps:
   - bash: echo "Hello world"
+  script: which python &&which python2&&which python3
+    displayName: check if py is present
