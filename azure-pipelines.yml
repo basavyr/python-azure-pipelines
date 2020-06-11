@@ -1,43 +1,33 @@
 jobs:
-# - job: Job1
-#   displayName: Job-2 macOS Mojave
-#   pool:
-#     vmImage: "macOS-10.14"
-#   strategy:
-#     parallel: 2
-#   steps:
-#   - script: ls && uname 
-#     displayName: "checks system"
-#   - script: python2 --version && python3 --version
-#     displayName: "checks Py VERSIONS"
-#   - script: python2 --version && python3 --version
-#     displayName: "checks Py VERSIONS"
+- job: Job1
+  displayName: Job-1 macOS
+  pool:
+    vmImage: "macos-latest"
+  strategy:
+    maxParallel: 2
+    matrix: 
+      Parallel_job_1:
+        version: python2
+      Parallel_job_2:
+        version: python3
+  steps:
+    - script: pip install -r packages.json && pip3 install -r packages.json
+      displayName: installs the necessary packages for Python2 and Python2
+    - script: cd src && $(version) data.py
+      displayName: "build with $(version)"
+    - script: cd src && $(version) data.py
+      displayName: "build with $(version)"
 
-
-# - job: Job2
-#   displayName: Job-2 macOS Catalina
-#   pool:
-#     vmImage: "macOS-latest"
-#   strategy:
-#     parallel: 2
-#   steps:
-#   - script: ls && uname 
-#     displayName: "checks system"
-#   - script: python2 --version && python3 --version
-#     displayName: "checks Py VERSIONS"
-#   - script: python2 --version && python3 --version
-#     displayName: "checks Py VERSIONS"
-
-- job: Job3
-  displayName: Job-3 Ubuntu
+- job: Job2
+  displayName: Job-2 Ubuntu
   pool:
     vmImage: "ubuntu-latest"
   strategy:
     maxParallel: 2
     matrix: 
-      Parallel1job:
+      Parallel_job_1:
         version: python2
-      Parallel2job:
+      Parallel_job_2:
         version: python3
   steps:
     - script: sudo apt install ttf-mscorefonts-installer
@@ -45,6 +35,6 @@ jobs:
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
     - script: cd src && $(version) data.py
-      displayName: build with py2
+      displayName: "build with $(version)"
     - script: cd src && $(version) data.py
-      displayName: build with py3
+      displayName: "build with $(version)"
