@@ -1,6 +1,4 @@
 jobs:
- strategy:
-  maxParallel: 2
 - job: Job1 - Ubuntu
   pool:
     vmImage: "ubuntu-latest"
