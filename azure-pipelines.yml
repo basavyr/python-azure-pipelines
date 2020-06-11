@@ -1,7 +1,7 @@
 jobs:
  strategy:
-    maxParallel: 2
-- job: Job1
+  maxParallel: 2
+- job: Job1 - Ubuntu
   pool:
     vmImage: "ubuntu-latest"
   steps:
@@ -43,7 +43,7 @@ jobs:
   - publish: /tmp/logs.tar.gz
     artifact: logs
 
-- job: Job2
+- job: Job2 - macOS
   pool:
     vmImage: "macOS-latest"
   steps:
