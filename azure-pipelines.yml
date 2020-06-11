@@ -34,8 +34,8 @@ jobs:
       # Parallel_job_2:
         # version: python3
   steps:
-    - script: sudo apt-get install -y ttf-mscorefonts-installer
-      displayName: installs the Times New Roman font
+    # - script: sudo apt-get install -y ttf-mscorefonts-installer
+    #   displayName: installs the Times New Roman font
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
     - script: cd src && $(version_2) data.py
