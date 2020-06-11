@@ -15,10 +15,10 @@ jobs:
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
     - script: cd src && $(version_2) data.py
-      displayName: "build with $(version_3)"
+      displayName: "build with $(version_2)"
     - script: cd src && $(version_3) data.py
       displayName: "build with $(version_3)"
-      
+
 - job: Job2
   displayName: Job-2 Ubuntu
   pool:
@@ -32,11 +32,11 @@ jobs:
       # Parallel_job_2:
         # version: python3
   steps:
-    - script: sudo apt install ttf-mscorefonts-installer
+    - script: sudo apt-get install -y ttf-mscorefonts-installer
       displayName: installs the Times New Roman font
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
     - script: cd src && $(version_2) data.py
-      displayName: "build with $(version_3)"
+      displayName: "build with $(version_2)"
     - script: cd src && $(version_3) data.py
       displayName: "build with $(version_3)"
