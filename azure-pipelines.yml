@@ -43,9 +43,18 @@ jobs:
     artifact: logs
 
 - job: Job2
-  displayName: Job-1 macOS
+  displayName: Job-2 macOS
   pool:
     vmImage: "macOS-latest"
   steps:
   - script: ls
     displayName: Check where we located
+  
+  - script: cd src/ && python2 data.py
+    displayName: runs the plot script
+  
+  - script: tar -zcvf graphs.tar.gz graphs && cp graphs.tar.gz /tmp 
+    displayName: creates archive with plots
+  
+  - publish: /tmp/graphs.tar.gz
+    artifact: plots

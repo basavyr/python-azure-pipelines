@@ -90,7 +90,7 @@ for x_id in x:
     current_f_val = round(MathFunction(x_id, params), 2)
     y.append(current_f_val)
 
-for plot_id in range(2):
+for plot_id in range(5):
     plotname = 'plot-'+str(plot_id+1)
     x_data = np.linspace(1, 10, 50, endpoint=True)
     y_data = generateYData(x_data+plot_id,   params)
