@@ -1,5 +1,6 @@
 jobs:
-- job: Job1Ubuntu
+- job: Job1
+  displayName: Job-1 Ubuntu
   pool:
     vmImage: "ubuntu-latest"
   steps:
@@ -41,10 +42,10 @@ jobs:
   - publish: /tmp/logs.tar.gz
     artifact: logs
 
-- job: Job2macOS
+- job: 
+  displayName: Job-1 macOS
   pool:
     vmImage: "macOS-latest"
   steps:
-  - bash: echo "Hello world"
-  - script: which python &&which python2&&which python3
-    displayName: check if py is present
+  - script: ls
+    displayName: Check where we located
