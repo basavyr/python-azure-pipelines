@@ -1,5 +1,5 @@
 jobs:
-- job: Job1 - Ubuntu
+- job: Job1 Ubuntu
   pool:
     vmImage: "ubuntu-latest"
   steps:
@@ -41,7 +41,7 @@ jobs:
   - publish: /tmp/logs.tar.gz
     artifact: logs
 
-- job: Job2 - macOS
+- job: Job2 macOS
   pool:
     vmImage: "macOS-latest"
   steps:
