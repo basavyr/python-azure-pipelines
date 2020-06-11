@@ -1,13 +1,13 @@
+import matplotlib
+matplotlib.use('Agg')
+from matplotlib import rc
+import matplotlib.pyplot as plt
 from datetime import datetime
 import time
 import platform as os
 import sys
-from matplotlib import rc
 import numpy as np
-import matplotlib.pyplot as plt
-import matplotlib
 # fixes the issue with Ubuntu complaining on missing Tinkter Package
-matplotlib.use('Agg')
 # the set of params = {w1,w2,t0}
 
 build_label = 'Generated with Python ' + str(sys.version_info.major)+'.'+str(
