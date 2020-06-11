@@ -3,6 +3,8 @@ jobs:
   displayName: Job-2 macOS Mojave
   pool:
     vmImage: "macOS-10.14"
+  strategy:
+    parallel: 5
   steps:
   - script: ls && uname 
     displayName: "checks system"
@@ -18,6 +20,8 @@ jobs:
   displayName: Job-2 macOS Catalina
   pool:
     vmImage: "macOS-latest"
+  strategy:
+    parallel: 5
   steps:
   - script: ls && uname 
     displayName: "checks system"
