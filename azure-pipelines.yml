@@ -19,8 +19,8 @@ jobs:
     - script: cd src && $(version_3) data.py
       displayName: "build with $(version_3)"
     - script: cd graphs && ls
-      displayName: "check the graph content
-      
+      displayName: "check the graph content"
+
 - job: Job2
   displayName: Job-2 Ubuntu
   pool:
