@@ -1,5 +1,5 @@
 jobs:
-  - job: Average Random Script
+  - job: Job1
     pool:
       vmImage: "ubuntu-latest"
     steps:
@@ -18,7 +18,7 @@ jobs:
       - script: pip3 install -r src/packages.json
         displayName: "install the necessary python packages - py3"
 
-      - script: cd src && chmod 775 clean.sh && ./clean.sh
+      - script: chmod 775 clean.sh && ./clean.sh
         displayName: "clean the log folder before building"
 
       - script: cd src && python2 average.py
@@ -40,8 +40,8 @@ jobs:
 
       - publish: /tmp/logs.tar.gz
         artifact: logs
-    - job: Average Random Script
-        pool:
+  - job: Job2
+      pool:
         vmImage: "ubuntu-latest"
       steps:
         - bash: echo "Hello world"
