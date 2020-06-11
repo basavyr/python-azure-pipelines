@@ -12,7 +12,7 @@ from datetime import datetime
 build_label = 'Generated with Python ' + str(sys.version_info.major)+'.'+str(
     sys.version_info.minor) + '\n'+'On '+str(os.system())+' @ '+str(datetime.utcnow())
 
-build_file_name = 'Python-'+str(sys.version_info.major)+'.'+str(
+build_file_name = 'Python'+str(sys.version_info.major)+'.'+str(
     sys.version_info.minor)
 
 
@@ -99,8 +99,10 @@ for x_id in x:
     current_f_val = round(MathFunction(x_id, params), 2)
     y.append(current_f_val)
 
-for plot_id in range(20):
-    plotname = 'plot-'+str(plot_id+1)+'-'+build_file_name
+for plot_id in range(25):
+    
+    # plotname = 'plot-'+str(plot_id+1)+'-'+build_file_name+'-'+now
+    plotname = 'plot'+'-'+str(plot_id)+'-'+build_file_name
     x_data = np.linspace(1, 10, 50, endpoint=True)
     y_data = generateYData(x_data+plot_id,   params)
     CreatePlot(plotname, x_data, y_data, params)

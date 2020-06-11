@@ -7,17 +7,18 @@ jobs:
     maxParallel: 2
     matrix: 
       Parallel_job_1:
-        version: python2
-      Parallel_job_2:
-        version: python3
+        version_2: python2
+        version_3: python3
+      # Parallel_job_2:
+        # version: python3
   steps:
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
-    - script: cd src && $(version) data.py
-      displayName: "build with $(version)"
-    - script: cd src && $(version) data.py
-      displayName: "build with $(version)"
-
+    - script: cd src && $(version_2) data.py
+      displayName: "build with $(version_3)"
+    - script: cd src && $(version_3) data.py
+      displayName: "build with $(version_3)"
+      
 - job: Job2
   displayName: Job-2 Ubuntu
   pool:
@@ -26,15 +27,16 @@ jobs:
     maxParallel: 2
     matrix: 
       Parallel_job_1:
-        version: python2
-      Parallel_job_2:
-        version: python3
+        version_2: python2
+        version_3: python3
+      # Parallel_job_2:
+        # version: python3
   steps:
     - script: sudo apt install ttf-mscorefonts-installer
       displayName: installs the Times New Roman font
     - script: pip install -r packages.json && pip3 install -r packages.json
       displayName: installs the necessary packages for Python2 and Python2
-    - script: cd src && $(version) data.py
-      displayName: "build with $(version)"
-    - script: cd src && $(version) data.py
-      displayName: "build with $(version)"
+    - script: cd src && $(version_2) data.py
+      displayName: "build with $(version_3)"
+    - script: cd src && $(version_3) data.py
+      displayName: "build with $(version_3)"
