@@ -8,6 +8,11 @@ jobs:
     displayName: "checks system"
   - script: python2 --version && python3 --version
     displayName: "checks Py VERSIONS"
+  - script: brew update && brew upgrade
+    displayName: "update the packages"
+  - script: python2 --version && python3 --version
+    displayName: "checks Py VERSIONS"
+
 
 - job: Job2
   displayName: Job-2 macOS Catalina
@@ -16,5 +21,9 @@ jobs:
   steps:
   - script: ls && uname 
     displayName: "checks system"
+  - script: python2 --version && python3 --version
+    displayName: "checks Py VERSIONS"
+  - script: brew update && brew upgrade
+    displayName: "update the packages"
   - script: python2 --version && python3 --version
     displayName: "checks Py VERSIONS"
