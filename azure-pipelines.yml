@@ -36,7 +36,11 @@ jobs:
     maxParallel: 2
     matrix: 
       Parallel1job:
+        name: PAR1
       Parallel2job:
+        name: PAR2
   steps:
     - script: uname
       displayName: uname
+    - script: echo $(name)
+      displayName: name
