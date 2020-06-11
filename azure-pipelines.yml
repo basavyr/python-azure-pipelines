@@ -1,6 +1,6 @@
 strategy:
   parallel: 2
-  jobs:
+  # jobs:
   - job: Job1
     displayName: Job-2 macOS Mojave
     pool:
