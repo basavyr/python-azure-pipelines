@@ -47,6 +47,8 @@ jobs:
 
 - job: Job2
   displayName: Job-2 macOS
+  strategy:
+    parallel: 5
   pool:
     vmImage: "macOS-latest"
   steps:
