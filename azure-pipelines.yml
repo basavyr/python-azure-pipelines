@@ -41,6 +41,6 @@ jobs:
         version: python3
   steps:
     - script: cd src && $(version) data.py
-    displayName: build with py2
+      displayName: build with py2
     - script: cd src && $(version) data.py
-    displayName: build with py3
+      displayName: build with py3
