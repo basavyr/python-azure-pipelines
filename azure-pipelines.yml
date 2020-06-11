@@ -1,49 +1,49 @@
 jobs:
-- job: Job1
-  displayName: Job-1 Ubuntu
-  pool:
-    vmImage: "ubuntu-latest"
-  steps:
-  # - script: sudo apt update
-  #   displayName: "Updates the image"
+# - job: Job1
+#   displayName: Job-1 Ubuntu
+#   pool:
+#     vmImage: "ubuntu-latest"
+#   steps:
+#   # - script: sudo apt update
+#   #   displayName: "Updates the image"
 
-  # - script: sudo apt-get install -y python
-  #   displayName: "Installs python"
+#   # - script: sudo apt-get install -y python
+#   #   displayName: "Installs python"
 
-  # - script: sudo apt-get install -y python3
-  #   displayName: "Installs python3"
+#   # - script: sudo apt-get install -y python3
+#   #   displayName: "Installs python3"
 
-  - script: sudo apt-get install -y texlive
-    displayName: "installs texlive"
+#   - script: sudo apt-get install -y texlive
+#     displayName: "installs texlive"
 
-  - script: pip install -r src/packages.json
-    displayName: "install the necessary python packages - py2"
+#   - script: pip install -r src/packages.json
+#     displayName: "install the necessary python packages - py2"
 
-  - script: pip3 install -r src/packages.json
-    displayName: "install the necessary python packages - py3"
+#   - script: pip3 install -r src/packages.json
+#     displayName: "install the necessary python packages - py3"
 
-  - script: chmod 775 clean.sh && ./clean.sh
-    displayName: "clean the log folder before building"
+#   - script: chmod 775 clean.sh && ./clean.sh
+#     displayName: "clean the log folder before building"
 
-  - script: cd src && python2 average.py
-    displayName: "runs the script - py2"
+#   - script: cd src && python2 average.py
+#     displayName: "runs the script - py2"
 
-  - script: cd src && python3 average.py
-    displayName: "runs the script - py3"
+#   - script: cd src && python3 average.py
+#     displayName: "runs the script - py3"
 
-  - script: |
-      cd logs
-      ls 
-      cd ..
-      tar -zcvf logs.tar.gz logs
-      ls
-      cp logs.tar.gz /tmp/
-      cd /tmp/
-      ls
-    displayName: check the logs and make archive
+#   - script: |
+#       cd logs
+#       ls 
+#       cd ..
+#       tar -zcvf logs.tar.gz logs
+#       ls
+#       cp logs.tar.gz /tmp/
+#       cd /tmp/
+#       ls
+#     displayName: check the logs and make archive
 
-  - publish: /tmp/logs.tar.gz
-    artifact: logs
+#   - publish: /tmp/logs.tar.gz
+#     artifact: logs
 
 - job: Job2
   displayName: Job-2 macOS
