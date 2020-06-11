@@ -39,9 +39,10 @@ def CreatePlot(plotname, x_data, y_data, params):
     y_data3 = generateYData(x_data, derived_params2)
     # rc('text', usetex=True)
     # rc('font', **{'family': 'serif', 'serif': ['Times']})
-    plt.rcParams["font.family"] = "Times New Roman"
+    plt.rcParams["font.family"] = "serif"
+    plt.rcParams["font.serif"] = "Times New Roman"
     # plt.title(r'$F(x;\mathcal{P}) = w_1x^{-2}+w_2\frac{\sin(x)}{x}+t_0x^2$')
-    plt.text(2, 2, build_label, fontsize=6, style='italic',
+    plt.text(2, 2, build_label, fontsize=7, style='italic',
              bbox={'facecolor': 'red', 'alpha': 0.1, 'pad': 10})
     plt.xlabel('x')
     plt.ylabel('F(x;P)')
