@@ -22,7 +22,7 @@ jobs:
     - script: cd graphs && ls
       displayName: "check the graph content"
     - script: tar -zcvf $(archive_name).tar.gz && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
-      displayName: "create tarball with plots and copy them to tmp
+      displayName: "create tarball with plots and copy them to tmp"
 
 - job: Job2
   displayName: Job-2 Ubuntu
