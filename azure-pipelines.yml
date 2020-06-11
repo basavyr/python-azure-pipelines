@@ -56,7 +56,10 @@ jobs:
   - script: pip3 install -r src/packages.json
     displayName: "install the necessary python packages - py3"
   
-  - script: cd src/ && python2 data.py
+  # - script: cd src/ && python2 data.py
+  #   displayName: runs the plot script
+
+  - script: cd src/ && python3 data.py
     displayName: runs the plot script
   
   - script: tar -zcvf graphs.tar.gz graphs && cp graphs.tar.gz /tmp 
