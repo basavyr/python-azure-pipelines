@@ -50,11 +50,8 @@ jobs:
   pool:
     vmImage: "macOS-latest"
   steps:
-  - script: ls
-    displayName: Check where we located
-  
-  - script: brew cask install mactex
-    displayName: "install the latex package"
+  # - script: brew cask install mactex
+  #   displayName: "install the latex package"
   
   - script: pip install -r src/packages.json
     displayName: "install the necessary python packages - py2"
