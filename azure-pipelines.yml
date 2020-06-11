@@ -13,6 +13,9 @@ jobs:
   # - script: sudo apt-get install -y python3
   #   displayName: "Installs python3"
 
+  - script: sudo apt-get install -y texlive
+    displayName: "installs texlive"
+
   - script: pip install -r src/packages.json
     displayName: "install the necessary python packages - py2"
 
@@ -49,6 +52,9 @@ jobs:
   steps:
   - script: ls
     displayName: Check where we located
+  
+  - script: brew cask install mactex
+    displayName: "install the latex package"
   
   - script: pip install -r src/packages.json
     displayName: "install the necessary python packages - py2"
