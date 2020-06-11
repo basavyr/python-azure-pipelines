@@ -4,14 +4,14 @@ jobs:
   pool:
     vmImage: "ubuntu-latest"
   steps:
-  - script: sudo apt update
-    displayName: "Updates the image"
+  # - script: sudo apt update
+  #   displayName: "Updates the image"
 
-  - script: sudo apt-get install -y python
-    displayName: "Installs python"
+  # - script: sudo apt-get install -y python
+  #   displayName: "Installs python"
 
-  - script: sudo apt-get install -y python3
-    displayName: "Installs python3"
+  # - script: sudo apt-get install -y python3
+  #   displayName: "Installs python3"
 
   - script: pip install -r src/packages.json
     displayName: "install the necessary python packages - py2"
@@ -49,6 +49,12 @@ jobs:
   steps:
   - script: ls
     displayName: Check where we located
+  
+  - script: pip install -r src/packages.json
+    displayName: "install the necessary python packages - py2"
+
+  - script: pip3 install -r src/packages.json
+    displayName: "install the necessary python packages - py3"
   
   - script: cd src/ && python2 data.py
     displayName: runs the plot script
