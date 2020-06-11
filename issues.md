@@ -4,4 +4,4 @@ In the development stages of the Python project, multiple issues ocurred. Soluti
 
 1. tinkter package missing
 2. parallel jobs
-3. 
+3. missing serif font (times new roman)
