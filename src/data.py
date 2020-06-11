@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use('Agg') # fixes the issue with Ubuntu complaining on missing Tinkter Package
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import rc
