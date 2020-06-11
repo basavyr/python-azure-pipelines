@@ -21,7 +21,7 @@ jobs:
       displayName: "build with $(version_3)"
     - script: cd graphs && ls
       displayName: "check the graph content"
-    - script: tar -zcvf $(archive_name).tar.gz && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
+    - script: tar -zcvf $(archive_name).tar.gz graphs && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
       displayName: "create tarball with plots and copy them to tmp"
 
 - job: Job2
@@ -48,5 +48,5 @@ jobs:
       displayName: "build with $(version_3)"
     - script: cd graphs && ls
       displayName: "check the graph content"
-    - script: tar -zcvf $(archive_name).tar.gz && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
+    - script: tar -zcvf $(archive_name).tar.gz graphs && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
       displayName: "create tarball with plots and copy them to tmp"
