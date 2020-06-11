@@ -41,7 +41,7 @@ jobs:
         version: python3
   steps:
     - script: pip install -r packages.json && pip3 install -r packages.json
-      displayName: installs the necessary packages
+      displayName: installs the necessary packages for Python2 and Python2
     - script: cd src && $(version) data.py
       displayName: build with py2
     - script: cd src && $(version) data.py
