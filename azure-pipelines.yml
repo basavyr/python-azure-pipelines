@@ -42,7 +42,7 @@ jobs:
   - publish: /tmp/logs.tar.gz
     artifact: logs
 
-- job: 
+- job: Job2
   displayName: Job-1 macOS
   pool:
     vmImage: "macOS-latest"
