@@ -1,33 +1,43 @@
 jobs:
-- job: Job1
-  displayName: Job-2 macOS Mojave
-  pool:
-    vmImage: "macOS-10.14"
-  strategy:
-    parallel: 5
-  steps:
-  - script: ls && uname 
-    displayName: "checks system"
-  - script: python2 --version && python3 --version
-    displayName: "checks Py VERSIONS"
-  - script: brew update && brew upgrade
-    displayName: "update the packages"
-  - script: python2 --version && python3 --version
-    displayName: "checks Py VERSIONS"
+# - job: Job1
+#   displayName: Job-2 macOS Mojave
+#   pool:
+#     vmImage: "macOS-10.14"
+#   strategy:
+#     parallel: 2
+#   steps:
+#   - script: ls && uname 
+#     displayName: "checks system"
+#   - script: python2 --version && python3 --version
+#     displayName: "checks Py VERSIONS"
+#   - script: python2 --version && python3 --version
+#     displayName: "checks Py VERSIONS"
 
 
-- job: Job2
-  displayName: Job-2 macOS Catalina
+# - job: Job2
+#   displayName: Job-2 macOS Catalina
+#   pool:
+#     vmImage: "macOS-latest"
+#   strategy:
+#     parallel: 2
+#   steps:
+#   - script: ls && uname 
+#     displayName: "checks system"
+#   - script: python2 --version && python3 --version
+#     displayName: "checks Py VERSIONS"
+#   - script: python2 --version && python3 --version
+#     displayName: "checks Py VERSIONS"
+
+- job: Job3
+  displayName: Job-3 Ubuntu
   pool:
-    vmImage: "macOS-latest"
+    vmImage: "ubuntu-latest"
   strategy:
-    parallel: 5
+    maxParallel: 2
+    matrix: 
+      Parallel1job:
+        name: par1
+      Parallel2job:
+        name: par2
   steps:
-  - script: ls && uname 
-    displayName: "checks system"
-  - script: python2 --version && python3 --version
-    displayName: "checks Py VERSIONS"
-  - script: brew update && brew upgrade
-    displayName: "update the packages"
-  - script: python2 --version && python3 --version
-    displayName: "checks Py VERSIONS"
+    - script: echo ${name}
