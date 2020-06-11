@@ -1,11 +1,2 @@
 numpy
 matplotlib
-scipy
-six
-python-dateutil
-pyparsing
-pytz
-backports.functools-lru-cache
-cycler
-subprocess32
-kiwisolver
