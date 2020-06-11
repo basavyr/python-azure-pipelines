@@ -1,12 +1,13 @@
-import matplotlib
-matplotlib.use('Agg') # fixes the issue with Ubuntu complaining on missing Tinkter Package
-import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib import rc
-import sys
-import platform as os
-import time
 from datetime import datetime
+import time
+import platform as os
+import sys
+from matplotlib import rc
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib
+# fixes the issue with Ubuntu complaining on missing Tinkter Package
+matplotlib.use('Agg')
 # the set of params = {w1,w2,t0}
 
 build_label = 'Generated with Python ' + str(sys.version_info.major)+'.'+str(
@@ -99,8 +100,9 @@ for x_id in x:
     current_f_val = round(MathFunction(x_id, params), 2)
     y.append(current_f_val)
 
-prefix=str(os.platform()[0]).lower()+str(sys.version_info.major)+str(sys.version_info.minor)
-print(prefix)
+prefix = str(os.platform()[0]).lower(
+)+str(sys.version_info.major)+str(sys.version_info.minor)
+
 for plot_id in range(25):
     # plotname = 'plot-'+str(plot_id+1)+'-'+build_file_name+'-'+now
     plotname = 'plot'+'-'+str(plot_id+1)+prefix

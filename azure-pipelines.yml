@@ -9,6 +9,7 @@ jobs:
       Parallel_job_1:
         version_2: python2
         version_3: python3
+        archive_name: graphs-bundle-drw
       # Parallel_job_2:
         # version: python3
   steps:
@@ -20,6 +21,8 @@ jobs:
       displayName: "build with $(version_3)"
     - script: cd graphs && ls
       displayName: "check the graph content"
+    - script: tar -zcvf $(archive_name).tar.gz && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
+      displayName: "create tarball with plots and copy them to tmp
 
 - job: Job2
   displayName: Job-2 Ubuntu
@@ -31,6 +34,7 @@ jobs:
       Parallel_job_1:
         version_2: python2
         version_3: python3
+        archive_name: graphs-bundle-lnx
       # Parallel_job_2:
         # version: python3
   steps:
@@ -44,3 +48,5 @@ jobs:
       displayName: "build with $(version_3)"
     - script: cd graphs && ls
       displayName: "check the graph content"
+    - script: tar -zcvf $(archive_name).tar.gz && cp $(archive_name).tar.gz /tmp/ && cd /tmp/ && ls
+      displayName: "create tarball with plots and copy them to tmp"

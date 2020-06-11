@@ -15,3 +15,11 @@ The project contains the following implementations:
    1. The script uses `matplotlib` module for saving some plots as `.pdf` format.
    2. `numpy` is used for computational purposes.
    3. The generated data represents pairs of data points $(x,y)$, where $x\in[0,10]$ and $y=f(x;\mathcal{P})$, with $\mathcal{P}$ representing a set of parameters which enter in the function.
+
+## Issues
+
+[This document](issues.md) describes in detail any potential issues that ocurred in the development pipeline.
+
+## Artifacts 
+
+* `data.py` - this implementation generates output graphs (in `.pdf` format), and the plot name depends on the platform on which the script is executed, and also the major Python version that is chosen for execution.
