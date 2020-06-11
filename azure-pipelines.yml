@@ -38,9 +38,9 @@ jobs:
       Parallel1job:
         version: python2
       Parallel2job:
-        version: version3
+        version: python3
   steps:
     - script: cd src && $(version) data.py
-    name: build with py2
+    displayName: build with py2
     - script: cd src && $(version) data.py
-    name: build with py3
+    displayName: build with py3
